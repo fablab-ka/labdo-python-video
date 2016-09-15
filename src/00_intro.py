@@ -1,8 +1,4 @@
-import argparse
-import datetime
-import imutils
-import time
-import cv2
+import cv2, imutils, time
 
 camera = cv2.VideoCapture(0)
 time.sleep(0.25)
