@@ -11,18 +11,19 @@ while True:
     break
 
   frame = imutils.resize(frame, width=400)
+  h, w, _ = frame.shape
 
-  blank_image = np.zeros((225*2, 400*2, 3), np.uint8)
+  blank_image = np.zeros((h*2, w*2, 3), np.uint8)
 
-  blank_image[0:225, 0:400, 0] = frame[:,:, 0]
-  blank_image[225:, 0:400, 1] = frame[:,:, 1]
-  blank_image[0:225, 400:, 2] = frame[:,:, 2]
+  blank_image[0:h, 0:w, 0] = frame[:,:, 0]
+  blank_image[h:, 0:w, 1] = frame[:,:, 1]
+  blank_image[0:h, w:, 2] = frame[:,:, 2]
 
   gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-  blank_image[225:, 400:, 0] = gray[:,:]
-  blank_image[225:, 400:, 1] = gray[:,:]
-  blank_image[225:, 400:, 2] = gray[:,:]
+  blank_image[h:, w:, 0] = gray[:,:]
+  blank_image[h:, w:, 1] = gray[:,:]
+  blank_image[h:, w:, 2] = gray[:,:]
 
   cv2.imshow("Labdo - Video 2", blank_image)
 
