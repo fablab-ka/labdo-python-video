@@ -14,6 +14,8 @@ while True:
     if not grabbed:
         break
 
+    frame = imutils.resize(frame, width=400)
+
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
     hist = cv2.calcHist([gray], [0], None, [hist_channels], [0, 256])

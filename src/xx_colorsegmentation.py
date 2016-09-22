@@ -12,6 +12,8 @@ while True:
     if not grabbed:
         break
 
+    frame = imutils.resize(frame, width=400)
+
     # Convert BGR to HSV
     hsv_image = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
     
