@@ -10,19 +10,16 @@ while True:
   if not grabbed:
     break
 
-  frame = imutils.resize(frame, width=500)
-
-  clone = frame.copy()
+  frame = imutils.resize(frame, width=800)
 
   pts = numpy.array([(100, 80), (300, 50), (300, 200), (50, 180)])
 
-
-  for (x, y) in pts:
-      cv2.circle(clone, (x, y), 5, (0, 255, 0), -1)
-
   warped = perspective.four_point_transform(frame, pts)
 
-  cv2.imshow("Original", clone)
+  for (x, y) in pts:
+    cv2.circle(frame, (x, y), 5, (0, 255, 0), -1)
+
+  cv2.imshow("Original", frame)
   cv2.imshow("Warped", warped)
 
   key = cv2.waitKey(1) & 0xFF

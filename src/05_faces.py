@@ -11,7 +11,7 @@ while True:
     if not grabbed:
       break
 
-    frame = imutils.resize(frame, width=400)
+    frame = imutils.resize(frame, width=800)
 
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 

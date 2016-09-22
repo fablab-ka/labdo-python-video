@@ -9,7 +9,7 @@ while True:
   if not grabbed:
     break
 
-  frame = imutils.resize(frame, width=400)
+  frame = imutils.resize(frame, width=800)
 
   cv2.imshow("Labdo - Video 1", frame)
 

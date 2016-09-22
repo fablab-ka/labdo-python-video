@@ -16,8 +16,11 @@ while True:
   blank_image = np.zeros((h*2, w*2, 3), np.uint8)
 
   blank_image[0:h, 0:w, 0] = frame[:,:, 0]
-  blank_image[h:, 0:w, 1] = frame[:,:, 1]
-  blank_image[0:h, w:, 2] = frame[:,:, 2]
+  blank_image[0:h, 0:w, 1] = frame[:,:, 1]
+  blank_image[0:h, 0:w, 2] = frame[:,:, 2]
+
+  blank_image[h: , 0:w, 1] = frame[:,:, 1]
+  blank_image[0:h, w: , 2] = frame[:,:, 2]
 
   gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
