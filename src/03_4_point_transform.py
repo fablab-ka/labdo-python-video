@@ -13,7 +13,9 @@ while True:
   frame = imutils.resize(frame, width=500)
 
   clone = frame.copy()
-  pts = numpy.array([(50, 50), (200, 50), (370, 250), (80, 200)])
+
+  pts = numpy.array([(100, 80), (300, 50), (300, 200), (50, 180)])
+
 
   for (x, y) in pts:
       cv2.circle(clone, (x, y), 5, (0, 255, 0), -1)
